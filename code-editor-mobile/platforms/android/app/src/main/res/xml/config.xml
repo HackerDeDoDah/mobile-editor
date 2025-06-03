@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.codeeditor.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="android-package" onload="true" value="org.apache.cordova.labs.keyboard.Keyboard" />
+    </feature>
+    <name>Code Editor</name>
+    <description>A mobile code editor application</description>
+    <author email="dev@codeeditor.com" href="http://codeeditor.com">
+        Code Editor Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <access origin="*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="android-minSdkVersion" value="22" />
+    <preference name="android-targetSdkVersion" value="33" />
+</widget>

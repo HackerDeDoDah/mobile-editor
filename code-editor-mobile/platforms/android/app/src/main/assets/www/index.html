@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mobile Code Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <button id="newFolderBtn">New Folder</button>
+            <button id="newFileBtn">New File</button>
+            <div class="file-explorer">
+                <div id="fileTree"></div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="editor-container">
+                <div class="editor-tabs">
+                    <div class="tab active" data-type="html">HTML</div>
+                    <div class="tab" data-type="css">CSS</div>
+                    <div class="tab" data-type="js">JS</div>
+                    <div class="tab" data-type="preview">Preview</div>
+                </div>
+                <div class="editors">
+                    <textarea id="htmlEditor"></textarea>
+                    <textarea id="cssEditor"></textarea>
+                    <textarea id="jsEditor"></textarea>
+                    <div id="previewContainer" style="display: none;">
+                        <iframe id="previewFrame"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-panels">
+        <div class="snippet-panel">
+            <button class="shortcut-btn" data-snippet="<!DOCTYPE html>&#10;<html lang=&quot;en&quot;>&#10;<head>&#10;  <meta charset=&quot;UTF-8&quot;>&#10;  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>&#10;  <title>Document</title>&#10;</head>&#10;<body>&#10;&#10;</body>&#10;</html>">HTML</button>
+            <button class="shortcut-btn" data-snippet="<header>&#10;  <h1>Title</h1>&#10;  <nav>&#10;    <ul>&#10;      <li><a href=&quot;#&quot;>Link</a></li>&#10;    </ul>&#10;  </nav>&#10;</header>">Header</button>
+            <button class="shortcut-btn" data-snippet="<section>&#10;  <h2>Section</h2>&#10;  <p>Content</p>&#10;</section>">Section</button>
+            <button class="shortcut-btn" data-snippet="<div class=&quot;card&quot;>&#10;  <h3>Card</h3>&#10;  <p>Content</p>&#10;</div>">Card</button>
+            <button class="shortcut-btn" data-snippet="<form>&#10;  <input type=&quot;text&quot;>&#10;  <button>Submit</button>&#10;</form>">Form</button>
+        </div>
+        <div class="shortcut-panel">
+            <button class="shortcut-btn snippet-toggle">≡</button>
+            <button class="shortcut-btn" data-snippet="<div>">div</button>
+            <button class="shortcut-btn" data-snippet="<p>">p</button>
+            <button class="shortcut-btn" data-snippet="<br>">br</button>
+            <button class="shortcut-btn" data-snippet="{">&#123;</button>
+            <button class="shortcut-btn" data-snippet="}">&#125;</button>
+            <button class="shortcut-btn" data-snippet="[">&#91;</button>
+            <button class="shortcut-btn" data-snippet="]">&#93;</button>
+            <button class="shortcut-btn" data-snippet="(">&#40;</button>
+            <button class="shortcut-btn" data-snippet=")">&#41;</button>
+            <button class="shortcut-btn" data-snippet=";">;</button>
+        </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
