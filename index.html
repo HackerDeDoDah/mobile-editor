@@ -9,14 +9,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <div class="file-explorer">
-                <h3>Files</h3>
-                <button id="newFolderBtn">New Folder</button>
-                <button id="newFileBtn">New File</button>
-                <div id="fileTree"></div>
+    <div id="landing-page" class="landing-page">
+        <div class="landing-content">
+            <h1>Codoodle Mobile</h1>
+            <div class="version-news">
+                <div class="update-content">
+                    <p class="version">Version 1.0.0</p>
+                    <ul>
+                        <li>Initial release</li>
+                        <li>Mobile-friendly code editor</li>
+                        <li>HTML, CSS, and JavaScript support</li>
+                    </ul>
+                </div>
             </div>
+            <button id="start-coding" class="start-coding-btn">Start Coding</button>
+        </div>
+    </div>
+
+    <div id="cookies-popup" class="cookies-popup">
+        <div class="cookies-content">
+            <p>We use cookies to enhance your coding experience. By continuing to use this site, you agree to our use of cookies.</p>
+            <button id="accept-cookies" class="cookie-btn">Accept</button>
+        </div>
+    </div>
+
+    <div id="editor-container" class="container" style="display: none;">
+        <div class="header">
+            <h3>Codoodle Mobile</h3>
         </div>
         <div class="main-content">
             <div class="editor-container">            <div class="editor-tabs">
@@ -37,8 +56,10 @@
     </div>
 
     <div class="mobile-panels">
-        <div class="snippet-panel">            <button class="shortcut-btn" data-snippet="<!DOCTYPE html>&#10;<html lang=&quot;en&quot;>&#10;<head>&#10;  <meta charset=&quot;UTF-8&quot;>&#10;  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>&#10;  <title>Document</title>&#10;</head>&#10;<body>&#10;&#10;</body>&#10;</html>">HTML</button>
-            <button class="shortcut-btn" data-snippet="<header class=&quot;header&quot;>&#10;  <h1>Page Title</h1>&#10;  <nav>&#10;    <ul>&#10;      <li><a href=&quot;#home&quot;>Home</a></li>&#10;      <li><a href=&quot;#about&quot;>About</a></li>&#10;      <li><a href=&quot;#contact&quot;>Contact</a></li>&#10;    </ul>&#10;  </nav>&#10;</header>">Header</button>            <button class="shortcut-btn" data-snippet="<section class=&quot;section&quot;>&#10;  <div class=&quot;container&quot;>&#10;    <h2>Section Title</h2>&#10;    <p>Content here...</p>&#10;  </div>&#10;</section>">Section</button>
+        <div class="snippet-panel">
+            <button class="shortcut-btn" data-snippet="<!DOCTYPE html>&#10;<html lang=&quot;en&quot;>&#10;<head>&#10;  <meta charset=&quot;UTF-8&quot;>&#10;  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>&#10;  <title>Document</title>&#10;</head>&#10;<body>&#10;&#10;</body>&#10;</html>">HTML</button>
+            <button class="shortcut-btn" data-snippet="<header class=&quot;header&quot;>&#10;  <h1>Page Title</h1>&#10;  <nav>&#10;    <ul>&#10;      <li><a href=&quot;#home&quot;>Home</a></li>&#10;      <li><a href=&quot;#about&quot;>About</a></li>&#10;      <li><a href=&quot;#contact&quot;>Contact</a></li>&#10;    </ul>&#10;  </nav>&#10;</header>">Header</button>
+            <button class="shortcut-btn" data-snippet="<section class=&quot;section&quot;>&#10;  <div class=&quot;container&quot;>&#10;    <h2>Section Title</h2>&#10;    <p>Content here...</p>&#10;  </div>&#10;</section>">Section</button>
             <button class="shortcut-btn" data-snippet="<nav class=&quot;navbar&quot;>&#10;  <ul>&#10;    <li><a href=&quot;#home&quot;>Home</a></li>&#10;    <li><a href=&quot;#about&quot;>About</a></li>&#10;    <li><a href=&quot;#contact&quot;>Contact</a></li>&#10;  </ul>&#10;</nav>">Navbar</button>
             <button class="shortcut-btn" data-snippet="<div class=&quot;card&quot;>&#10;  <img src=&quot;image.jpg&quot; alt=&quot;Card image&quot;>&#10;  <div class=&quot;card-content&quot;>&#10;    <h3>Card Title</h3>&#10;    <p>Card description...</p>&#10;  </div>&#10;</div>">Card</button>
             <button class="shortcut-btn" data-snippet="<form class=&quot;form&quot;>&#10;  <div class=&quot;form-group&quot;>&#10;    <label for=&quot;name&quot;>Name:</label>&#10;    <input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required>&#10;  </div>&#10;  <button type=&quot;submit&quot;>Submit</button>&#10;</form>">Form</button>
@@ -47,7 +68,12 @@
         <div class="shortcut-panel">
             <button class="shortcut-btn snippet-toggle" title="Show HTML snippets">≡</button>
             <button class="shortcut-btn" data-snippet="<div></div>">div</button>
-            <button class="shortcut-btn" data-snippet="<span></span>">span</button>            <button class="shortcut-btn" data-snippet="<a href=&quot;&quot;></a>">link</button>
+            <button class="shortcut-btn" data-snippet="<h1></h1>">h1</button>
+            <button class="shortcut-btn" data-snippet="<h2></h2>">h2</button>
+            <button class="shortcut-btn" data-snippet="<h3></h3>">h3</button>
+            <button class="shortcut-btn" data-snippet='class=""'>class</button>
+            <button class="shortcut-btn" data-snippet="<span></span>">span</button>
+            <button class="shortcut-btn" data-snippet="<a href=&quot;&quot;></a>">link</button>
             <button class="shortcut-btn" data-snippet="<p></p>">p</button>
             <button class="shortcut-btn" data-snippet="<br>">br</button>
             <button class="shortcut-btn" data-snippet="{">&#123;</button>
